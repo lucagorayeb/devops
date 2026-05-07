@@ -3,6 +3,14 @@
 SERVICO="apache2.service"
 DIRETORIO_LOG=./log
 ARQUIVO_LOG="$DIRETORIO_LOG/log_apache"
+USER=$(id --user)
+
+verifica_se_root(){
+        if [[ $USER -ne "0" ]];then
+                echo "Acsses denied (root privilege)"
+                exit 1
+        fi
+}
 
 verifica_se_diretorio_log_existe(){
         if [[ ! -d $DIRETORIO_LOG ]]; then
@@ -11,7 +19,7 @@ verifica_se_diretorio_log_existe(){
 }
 
 verifica_se_esta_ativo(){
-        sudo systemctl is-active $SERVICO &> /dev/null
+        systemctl is-active $SERVICO &> /dev/null
         codigo_saida=$?
         return $codigo_saida
 }
@@ -24,31 +32,17 @@ mensagem_log(){
         echo "[$(data_atual)] [$1] $2" >> $ARQUIVO_LOG
 }
 
-mensagem_erro(){
-        echo "[$(data_atual)] [ERROR] $SERVICO is not running" >> ./log/log_apache
-}
-
-mensagem_info(){
-        echo "[$(data_atual)] [INFO]  reinicialazing $SERVICO" >> ./log/log_apache
-}
-
-mensagem_aviso(){
-        echo "[$(data_atual)] [WARN]  achive the limit of trys to restart $SERVICO" >> ./log/log_apache
-}
-
-mensagem_funcionamento(){
-        echo "[$(data_atual)] [INFO]  $SERVICO is running" >> ./log/log_apache
-}
+verifica_se_root
+verifica_se_diretorio_log_existe
 
 for i in {1..5}; do
-        verifica_se_diretorio_log_existe
         verifica_se_esta_ativo
         if [[ "$?" -ne "0" ]]; then
                 mensagem_log "ERRO" "$SERVICO is down"
-                mensagem_log "INFO" "$i/5 try to restart $SERVICE"
-                sudo systemctl restart $SERVICO
+                mensagem_log "INFO" "$i/5 try to restart $SERVICO"
+                systemctl restart $SERVICO
         else
-                mensagem_funcionamento
+                mensagem_log "INFO" "$SERVICO is running"
                 exit 0
         fi
 
@@ -60,6 +54,8 @@ for i in {1..5}; do
 
         sleep 2
 done
+
+
 
 
 
