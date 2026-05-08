@@ -20,8 +20,7 @@ verifica_se_diretorio_log_existe(){
 
 verifica_se_esta_ativo(){
         systemctl is-active $SERVICO &> /dev/null
-        codigo_saida=$?
-        return $codigo_saida
+        echo $?
 }
 
 data_atual(){
@@ -36,11 +35,11 @@ verifica_se_root
 verifica_se_diretorio_log_existe
 
 for i in {1..5}; do
-        verifica_se_esta_ativo
-        if [[ "$?" -ne "0" ]]; then
+        if [[ $(verifica_se_esta_ativo) -ne 0 ]]; then
                 mensagem_log "ERRO" "$SERVICO is down"
                 mensagem_log "INFO" "$i/5 try to restart $SERVICO"
                 systemctl restart $SERVICO
+                
         else
                 mensagem_log "INFO" "$SERVICO is running"
                 exit 0
