@@ -1,0 +1,95 @@
+#! /usr/bin/env bash
+
+loadkeys br-abnt2
+
+loadkeys pt-latin1
+
+locale-gen 
+
+packman -Sy core extra -y
+
+systemctl enable systemd-networkd.service
+
+systemctl start systemd-networkd.service
+
+timedatectl set-timezone America/Porto_Velho 
+
+particionamento do disco:
+
+g - para gpt 
+
+n - para novas partições
+depois que configurar o tamanho das partições é só setar o tipo delas 
+
+t - para selecionar os tipos 
+
+mkfs.ext4 /dev/partição_raiz
+
+mkswap /dev/partição_swap
+
+mkfs.fat -F 32 /dev/partição_de_sistema_efi
+
+# mount /dev/partição_raiz /mnt
+
+# mount --mkdir /dev/partição_de_sistema_efi /mnt/boot
+
+# swapon /dev/partição_swap
+
+pacstrap -K /mnt base linux linux-firmware 
+
+genfstab -U /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt
+
+ln -sf /usr/share/zoneinfo/Região/Cidade /etc/localtime
+
+hwclock --systohc
+
+locale-gen
+
+/etc/locale.conf -> LANG=pt_BR.UTF-8
+
+/etc/vconsole.conf -> KEYMAP=br-abnt2
+
+/etc/hostname -> hostname
+
+mkinitcpio -P
+
+passwd
+
+Depois de inicializar 
+
+# mirrors 
+reflector --country Brazil --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+# Dependencias
+vim 
+sudo 
+git 
+docker 
+nvidia 
+nvidia-utils 
+nvidia-settings
+gdm 
+gnome-shell 
+gnome-control-center 
+gnome-terminalnautilus 
+gnome-session
+xdg-desktop-portal-gnome
+gnome-tweaks
+pipewire
+pipewire-pulse
+wireplumber
+xdg-utils
+firefox
+eog
+evince
+gnome-browser-connector 
+gnome-extensions-app
+
+# Colocando o yay 
+sudo pacman -Syu --needed base-devel git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
