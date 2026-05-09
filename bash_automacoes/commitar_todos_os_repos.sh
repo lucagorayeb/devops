@@ -3,6 +3,7 @@ directorys=("bash" "c" "devops" "docker" "git" "ideias_de_codigo" "lanchonete-la
 path="/home/luca/documents"
 for directory in $directorys; do
     $(cd $path/$directory/)
+    sleep 2
     /home/luca/documents/bash/scripts/commitar_repo.sh
-    $(cd)
+    sleep 2
 done
