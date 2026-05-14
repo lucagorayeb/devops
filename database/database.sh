@@ -1,10 +1,11 @@
 #! /usr/bin/env bash
 IFS=$'\n'
 source .env
+DIRETORIO_RAIZ='/home/luca/documents/livros/'
 
-function comando_docker(){
-    docker exec -it mysql-bash mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e $1 $MYSQL_DATABASE 
-}
+#function comando_docker(){
+#    docker exec -it mysql-bash mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e $1 $MYSQL_DATABASE 
+#}
 
 #comando_docker "SHOW TABLES;"
 
@@ -40,5 +41,23 @@ function do_insertion(){
     comando_docker $query
 }
 
-user_menu
-select_action
+function children_directorys(){
+    echo $(ls | wc -l)
+}
+
+function return_one(){
+    echo 1
+}
+
+function map_book_directory(){
+    contador=$(children_directorys)
+    while [[ $contador -ne '0' ]]; do
+        ls | head -n $((contador)) | tail -n 1
+        contador=$((contador - 1))
+    done
+    #for i in {$(return_one)..$(children_directorys)}; do
+    #    ls | head -n $i | tail -n 1
+    #done
+}
+
+map_book_directory
