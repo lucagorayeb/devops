@@ -5,6 +5,6 @@ jobs:
   Pushing-Text-Files: 
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Onde será que esse echo aparece?"
+      - run: cat .gitignore | grep .env  || exit 1
 
 
