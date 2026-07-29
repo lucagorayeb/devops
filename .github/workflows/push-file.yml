@@ -1,0 +1,10 @@
+name: Push File 
+run-name: ${{ github.actor }} está treinando CI.
+on: push
+jobs:
+  Pushing-Text-Files: 
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Onde será que esse echo aparece?"
+
+
