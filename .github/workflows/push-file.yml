@@ -1,10 +1,16 @@
 name: Push File 
-run-name: ${{ github.actor }} está treinando CI.
-on: push
+
+on: 
+  pull_requests:
+    types: opened
+
+permissions:
+  pull-requests: write
+
 jobs:
   Pushing-Text-Files: 
     runs-on: ubuntu-latest
     steps:
-      - run: cat .gitignore | grep .env  || exit 1
+      - run: echo "Treinando integração continua."
 
 
