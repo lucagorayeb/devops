@@ -5,7 +5,7 @@ on:
     types: opened
 
 permissions:
-  pull-requests: write
+  pushs: write
 
 jobs:
   Pushing-Text-Files: 
