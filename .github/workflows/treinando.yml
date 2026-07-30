@@ -1,11 +1,6 @@
 name: Push File 
 
-on: 
-  push:
-    types: opened
-
-permissions:
-  push: write
+on: push 
 
 jobs:
   Pushing-Text-Files: 
