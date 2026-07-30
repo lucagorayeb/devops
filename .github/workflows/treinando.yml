@@ -1,7 +1,7 @@
 name: Push File 
 
 on: 
-  pull_requests:
+  push:
     types: opened
 
 permissions:
