@@ -12,5 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Treinando integração continua."
-
+      - run: echo "Bom dia"
 
