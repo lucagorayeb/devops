@@ -1,0 +1,1 @@
+Praticando comandos no terminal

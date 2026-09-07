@@ -1,0 +1,61 @@
+{
+  "empresa": "TechCorp Brasil",
+  "ano_fundacao": 2018,
+  "ativo": true,
+  "departamentos": [
+    {
+      "nome": "Engenharia",
+      "andar": 3,
+      "orcamento": 150000.50,
+      "funcionarios": [
+        {
+          "id": 1,
+          "nome": "Ana Silva",
+          "cargo": "Desenvolvedora Sênior",
+          "salario": 12000,
+          "ativo": true,
+          "habilidades": ["Go", "Docker", "Kubernetes", "jq"]
+        },
+        {
+          "id": 2,
+          "nome": "Carlos Souza",
+          "cargo": "DevOps Engineer",
+          "salario": 11000,
+          "ativo": true,
+          "habilidades": ["AWS", "Terraform", "Linux"]
+        },
+        {
+          "id": 3,
+          "nome": "Mariana Lima",
+          "cargo": "Estagiária",
+          "salario": 3500,
+          "ativo": false,
+          "habilidades": ["Python", "Git"]
+        }
+      ]
+    },
+    {
+      "nome": "Produto",
+      "andar": 2,
+      "orcamento": 80000.00,
+      "funcionarios": [
+        {
+          "id": 4,
+          "nome": "Beatriz Costa",
+          "cargo": "Product Manager",
+          "salario": 14000,
+          "ativo": true,
+          "habilidades": ["Scrum", "SQL", "Roadmapping"]
+        },
+        {
+          "id": 5,
+          "nome": "Lucas Mendes",
+          "cargo": "UX Designer",
+          "salario": 9500,
+          "ativo": true,
+          "habilidades": ["Figma", "UX Research"]
+        }
+      ]
+    }
+  ]
+}

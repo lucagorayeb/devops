@@ -1,3 +1,5 @@
 livros/
 docker/
 .env
+.github/
+database
