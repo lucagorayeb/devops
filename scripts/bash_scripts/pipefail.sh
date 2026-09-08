@@ -1,15 +1,22 @@
 #! /usr/bin/env bash 
 
-set -o pipefail
-set -o noclobber
+set -euo pipefail
+IFS=$'\n\t'
+# set -o noclobber
+# cp /home/luca/nao_tem /home/luca/documents
+# echo "oi"
+# firstName='Luca'
+# fullName="$firstName Siqueira"
 
-echo "first line" > file.txt
-echo "second line" >> file.txt
+# echo "$fullName"
 
-sort somefile.txt | uniq || exit 100
+# echo "first line" > file.txt
+# echo "second line" >> file.txt
 
-echo "This line never runs"
-exit 0
+# sort somefile.txt | uniq || exit 100
+
+# echo "This line never runs"
+# exit 0
 
 # set -e -> Sai do programa qualquer código de saída que não seja 0.
 # set -u -> Mostra a linha que tem o erro, por exemplo de nome de variavel
