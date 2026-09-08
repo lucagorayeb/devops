@@ -116,3 +116,71 @@
     5 - 5xx (Erro do servidor)
 
     O xx refere a número entre 0-99.
+
+## Cliente 
+
+    O cliente é quem faz as requisições atráves do navegador ou de outro software, mas
+    geralmente pelo navegador. Para exibir a página web o navegador envia a solicitação
+    para a página HTML ou para outros items como páginas css, imagens e outros.
+
+## Servidor Web 
+    
+    O servidor web que responde as solicitações do cliente. Um servidor é identificado 
+    com um único IP, por isso parece que é somente um servidor, mas são vários
+    servidores que compartilham do mesmo IP.
+
+## Proxies
+
+    Os proxies são máquinas que ficam entre o cliente e o servidor ajudando no transporte
+    da requisição ao longo da rede. Os proxies são transparentes para a camada HTTP e 
+    são muito úteis para a performance das requisições. Eles podem atuar de forma 
+    transparente fazendo só a entrega da requisição e da resposta de uma ponta a outra, 
+    mas também podem alterar a requisição de alguma forma antes de entregar ao servidor.
+    Os proxies podem executar várias funções:
+
+        - Cache -> Pode ser público ou privado, como o cache do navegador.
+        - Filtro -> Como um scanner para vírus ou controle parental.
+        - Balanceamento de Carga -> Permitindo vários servidores fazerem diferentes
+                                    requisições.
+        - Autenticação -> Controlar o acesso a diferentes rescursos.
+        - Log -> Permitindo armazenar histórico de informações.
+
+## Aspectos Básicos do HTTP
+
+    - O HTTP foi feito para a leitura humana, mesmo com o adicional de complexidade do
+      HTTP/2 que encapsula as requisições em frames. As requisições são fáceis para os 
+      humanos lerem e fazerem testes.
+
+    - O HTTP é stateless, ou seja, processa toda a informação de forma independente. Não
+      guarda o histórico ou lembrança das interações anteriores.
+
+    - Os cookies HTTP permitem o uso de sessões stateful. Usando a extensão de cabeçalho
+      os cookies podem ser compartilhados no mesmo contexto e na mesma data.
+
+## O que o HTTP pode controlar
+
+    - Cache: Os servidores podem instruir ao proxies e clientes os que eles podem fazer
+             fazer cache e por quanto tempo eles podem armazena-lo. O cliente pode 
+             instruir proxies de cache intermediários para ignorar documentos salvos.
+
+    - Relaxar a restrição de origem: Para previnir snooping e outras invasões de
+                                     privacidade, o navegador web força uma separação 
+                                     estrita entre páginas que tem origens diferentes.
+                                     Cabelçalhos HTTP do lado do servidor podem relaxar
+                                     essa restrição, permitindo que partes de sites de 
+                                     diferentes domínios possam ser acessados.
+
+    - Autenticação: As páginas web podem ser protegidas para que somente alguns usuários 
+                    consigam acessar. A autenticação básica pode ser promovida pelo HTTP,
+                    usando WWW-Autenticate e cabeçalhos similares, ou especificando uma 
+                    sessão específica com HTTP cookies.
+
+    - Proxy e Tunelamento: Clientes e servidores podem estar dentro de redes internas, 
+                           intranets, e precisam esconder seu IP. Para isso as
+                           requisições HTTP são enviadas para um proxy que atua como uma
+                           barreira para a internet. Nem todo proxy é HTTP, podem ter os 
+                           de protocolo SOCKS que operam em uma camada mais baixa e
+                           podem ter proxies FTP.
+
+    - Sessões: Usando cookies é permitido linkar requisoçoes com o stado do servidor. 
+               Isso cria sessões, e o HTTP básico deixa de ser stateless. 
