@@ -1,4 +1,4 @@
-# Foward Proxy
+# Forward Proxy
 
 - É um sistema ou um roteador que promove uma porta entre os usuários 
   e a internet.
@@ -18,7 +18,7 @@
 
 ## O que é um servidor proxy?
 
-- É uma porta para a internet. O servidor proxy age como um homen do meio
+- É uma porta para a internet. O servidor proxy age como um homem do meio
   (middleman) entre o dispositivo e a web.
 
 ## Servidores Proxy e Segurança 
@@ -31,8 +31,8 @@
     2 - Deixar os empregados seguros caso alguém tente bisbilhota-los.
     3 - Fazer o balanceamento de rede para impedir falhas.
     4 - Controlar o acesso dos usuários.
-    5 - Salvar banda larga fazendo cache dos files ou compimindo 
-        tranfégo.
+    5 - Salvar banda larga fazendo cache dos files ou comprimindo 
+        trafego.
 
 # Como o Proxy funciona
 
@@ -51,3 +51,21 @@
   administrador de rede escolhe o proxy para proteger dados e privacidade.  
 
 - Examinam os dados entrando e saindo do computador ou da rede. 
+
+## Benefícios de um servidor de proxy
+
+- Segurança Aprimorada: Pode agir como um firewall entre o usuário e a internet.
+                        Sem ele, hackers podem acessar facilmente o IP da máquina.
+
+- Privacidade de busca, vista, escuta e compra: Usar diferentes proxies permite que 
+                                                você evite de ter que ver anúncios 
+                                                indesejados. Com um proxy, busca em sites
+                                                é bem protegida e impossível de rastrear.
+
+- Acesso a conteúdo de localização específica: Pode criar um servidor proxy com o ip 
+                                              associado a outro país. De fato, pode-se
+                                              parecer que você está em um país e ganhar 
+                                              acesso total a todo conteúdo de rede que 
+                                              aquele país é permitido.
+
+- Prevenir funcionários de acessar 
