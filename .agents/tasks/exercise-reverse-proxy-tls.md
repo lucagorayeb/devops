@@ -56,7 +56,7 @@ Client (curl / browser)
   - Restricts deprecated SSL protocols (TLS 1.0/1.1 disabled; TLS 1.2 and TLS 1.3 only).
 
 ### 5. Verification & Acceptance Criteria
-- [ ] `curl -I http://localhost` returns `HTTP/1.1 301 Moved Permanently` with `Location: https://localhost/`.
+- [X] `curl -I http://localhost` returns `HTTP/1.1 301 Moved Permanently` with `Location: https://localhost/`.
 - [ ] `curl -vk https://localhost` successfully completes the TLS handshake and outputs a response from one of the backend replicas.
 - [ ] Multiple consecutive requests show round-robin load distribution between backend 1 and backend 2.
 - [ ] Upstream logs confirm receipt of `X-Forwarded-For` and `X-Forwarded-Proto: https`.
