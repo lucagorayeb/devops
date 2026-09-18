@@ -4,6 +4,8 @@ services:
     image: hashicorp/http-echo
     networks:
       - backend
+#    ports:
+#      - "443:5678" 
   
   backend_app_2:
     image: nginx:latest
