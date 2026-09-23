@@ -57,10 +57,10 @@ Client (curl / browser)
 
 ### 5. Verification & Acceptance Criteria
 - [X] `curl -I http://localhost` returns `HTTP/1.1 301 Moved Permanently` with `Location: https://localhost/`.
-- [ ] `curl -vk https://localhost` successfully completes the TLS handshake and outputs a response from one of the backend replicas.
-- [ ] Multiple consecutive requests show round-robin load distribution between backend 1 and backend 2.
-- [ ] Upstream logs confirm receipt of `X-Forwarded-For` and `X-Forwarded-Proto: https`.
-- [ ] Validating configuration syntax (`nginx -t`) inside the container passes with zero errors before starting or reloading.
+- [X] `curl -vk https://localhost` successfully completes the TLS handshake and outputs a response from one of the backend replicas.
+- [X] Multiple consecutive requests show round-robin load distribution between backend 1 and backend 2.
+- [X] Upstream logs confirm receipt of `X-Forwarded-For` and `X-Forwarded-Proto: https`.
+- [X] Validating configuration syntax (`nginx -t`) inside the container passes with zero errors before starting or reloading.
 
 ## Official Documentation References
 - [NGINX Reverse Proxy Administration Guide](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
