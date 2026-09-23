@@ -2,10 +2,10 @@ services:
   
   backend_app_1:
     image: hashicorp/http-echo
+    command: ["-text", "Hello from Backend App 1"]
     networks:
       - backend
-#    ports:
-#      - "443:5678" 
+    
   
   backend_app_2:
     image: nginx:latest
