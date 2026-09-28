@@ -45,3 +45,8 @@ Se não existisse concorrência somente um usuário poderia usar o sistema por v
 
 - Melhor experiência do usuário: O sistema permanece respondendo mesmo quando há muitos acessos simultâneos.
 
+## Paralelismo 
+
+O paralelismo é constatemente confundido com a concorrência, mas são conceitos diferentes. O paralelismo é a execução simultânea de tarefas em diferentes processadores ou núcleos, exige recursos físicos capazes de executar tarefas ao mesmo tempo, aumenta o desempenho por execução simultânea.
+
+
