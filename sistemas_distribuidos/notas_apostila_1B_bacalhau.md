@@ -25,3 +25,23 @@ A arquitetura cliente-servidor foi criada pela necessidade de  haver a comunica�
 Com o surgimento da internt a arquitetura cliente servidor passou por mudanças, deixou de ser uma arquitetura de duas camadas para se tornar uma arquitetura de tres camadas. Essa arquitetura de 3 camadas faz a divisão entre cliente que só faz renderizar as páginas e enviar dados, o servidor que faz a lógica de negócio com as requisições e a última camada é a de armazenamento no banco de dados.
 
 ## Computação em nuvem
+
+A computação em nuvem é o compartilhamento de recursos, sejam serviços web ou infraestrutura de TI. Os benefícios da cloud são que as empresas de menor não precisam mais gastar rios de dinheiro com a instalação de hardware, somente pagar para utilizar recursos de outra empresa. A cloud fornece um nível de dispolibilidade altíssimo e escalabilidade. A disponibilidade é devido ao fato de que caso um servidor pare de funcionar outro vai estar disponível para a utilização. A escalabilidade é a capacidade de crescer, existem dois tipos de escalabilidade a vertical que é apenas a adição de recursos a um único servidor, adicionar memória de trabalho ou armazenamento, adicionar processamento e entre outros. A escalabilidade horizontal é quando adicionamos um outro servidor ao ambiente.
+
+## Computação de borda (edge)
+
+A computação de borda é muito utilizada para dispositivos autônomos pois possibilitou que a tomada de decisão fosse feita no próprio dispositivo ao invés de enviar o dado e esperar a resposta do servidor. Isso causaria problema de latência pela quantidade de dados sendo enviada, o atraso deviso a distância física que poderia acarretar em consequências reais.
+
+## Concorrência 
+
+Concorrência é a capacidade de um sistema computacional executar ou gerenciar diversas atividades que ocorrem durante um mesmo intervalo de tempo.
+
+Se não existisse concorrência somente um usuário poderia usar o sistema por vez. Os benefícios da concorrência são:
+ - A melhor utilização dos recursos: Servidores permanecem ocupados atendendo diversas solicitações reduzindo períodos de ociosidade.
+
+- Maior desempenho: Diversas operações podem avançar simultaneamente, diminuindo o tempo médio de resposta percebido pelos usuários.
+
+- Maior capacidade de atendimento: Milhares de usuários conseguem utilizar o sistema ao mesmo tempo.
+
+- Melhor experiência do usuário: O sistema permanece respondendo mesmo quando há muitos acessos simultâneos.
+
