@@ -173,4 +173,25 @@ Existem outros tipos de tolerancia que podem ocorrer em sistemas distribuídos c
 
 A tolerancia diz respeito a como irão responder a alguma falha. As medidas de reposta são a redundancia, seja de banco de dados ou de servidor.
 
-## Heterogeneidade 
+## Heterogeneidade
+
+A heterogeneidade é a capacidade do sistema de integrar diferentes tecnologias. Permitindo que haja o funcionamento harmônico entre essas diferentes tecnologias. 
+
+Existem vários tipos de heterogeneidade:
+	- Hardware
+	- Software
+	- Banco de dados
+	- Linguagens de programação
+	- Protocolos de comunicação
+
+A heterogeneidade pode ser superada com a utilização de algumas ferramentas.
+
+São elas:
+
+	- Protocolos Padronizados: protocolos como TCP/IP, HTTP e HTTPS definem regras comuns para a comunicação entre dispositivos e aplicações.
+
+	- APIs(Interfaces de Programação de Aplicações): As APIs permitem que sistemas desenvolvidos em tecnologias diferentes troquem informações de forma padronizada.
+
+	- Middleware: O middleware atua como uma camada intermidiário entre aplicações distribuídas, ocultando diferenças tecnolóficas e facilitando a comunicação entre componentes heterogêneos.
+
+	- Padrões Abertos: A adoção de padões amplamente aceitos pela indústria reduz problemas de compatibilidade e facilita a integração entre platagorma distintas.
