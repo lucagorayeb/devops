@@ -163,4 +163,14 @@ Existem vários tipos de Transparência:
 	promovido por meio da redundância, monitoramento e balanceamento de carga. Não é possível ficar 
 	disponível o tempo todo, mas pode se reduzir o risco de que isso aconteça. 
 	
-	A redundância 
+	A redundância é uma das forma de se garantir a disponibilidade. A redundancia permite que caso um servidor apresente problemas outro pode assumir o seu lugar de forma imediata, tornando o sistema transparente.
+
+## Tolerancia a Falhas
+
+A tolerancia a falhas não é evitar que o serviço fique no as 24/7, mas sim minimizar que acidentes que possam causar queda no serviço aconteçam. Grande parte das falhas que ocorrem são causadas pelos seres humanos. Para que isso seja evitado, processos de e revisão de código, configuração e documentação devem ser sempre seguidos.
+
+Existem outros tipos de tolerancia que podem ocorrer em sistemas distribuídos como a falha do hardware, processador queimado, memória ram com defeito e entre outros. Falhas se software também são possíveis como bugs, erros de atualização de dependências. O último tipo de falha é o de comunicação, caso algum enlance ou fibra tenha sido rompida ou parado de funcionar. 
+
+A tolerancia diz respeito a como irão responder a alguma falha. As medidas de reposta são a redundancia, seja de banco de dados ou de servidor.
+
+## Heterogeneidade 
