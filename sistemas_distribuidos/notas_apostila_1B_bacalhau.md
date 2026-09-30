@@ -163,19 +163,29 @@ Existem vários tipos de Transparência:
 	promovido por meio da redundância, monitoramento e balanceamento de carga. Não é possível ficar 
 	disponível o tempo todo, mas pode se reduzir o risco de que isso aconteça. 
 	
-	A redundância é uma das forma de se garantir a disponibilidade. A redundancia permite que caso um servidor apresente problemas outro pode assumir o seu lugar de forma imediata, tornando o sistema transparente.
+	A redundância é uma das forma de se garantir a disponibilidade. A redundancia permite que caso 
+	um servidor apresente problemas outro pode assumir o seu lugar de forma imediata, tornando o 
+	sistema transparente.
 
 ## Tolerancia a Falhas
 
-A tolerancia a falhas não é evitar que o serviço fique no as 24/7, mas sim minimizar que acidentes que possam causar queda no serviço aconteçam. Grande parte das falhas que ocorrem são causadas pelos seres humanos. Para que isso seja evitado, processos de e revisão de código, configuração e documentação devem ser sempre seguidos.
+A tolerancia a falhas não é evitar que o serviço fique no as 24/7, mas sim minimizar que acidentes 
+que possam causar queda no serviço aconteçam. Grande parte das falhas que ocorrem são causadas pelos 
+seres humanos. Para que isso seja evitado, processos de e revisão de código, configuração e documentação 
+devem ser sempre seguidos.
 
-Existem outros tipos de tolerancia que podem ocorrer em sistemas distribuídos como a falha do hardware, processador queimado, memória ram com defeito e entre outros. Falhas se software também são possíveis como bugs, erros de atualização de dependências. O último tipo de falha é o de comunicação, caso algum enlance ou fibra tenha sido rompida ou parado de funcionar. 
+Existem outros tipos de tolerancia que podem ocorrer em sistemas distribuídos como a falha do hardware, 
+processador queimado, memória ram com defeito e entre outros. Falhas se software também são possíveis 
+como bugs, erros de atualização de dependências. O último tipo de falha é o de comunicação, caso algum 
+enlance ou fibra tenha sido rompida ou parado de funcionar. 
 
-A tolerancia diz respeito a como irão responder a alguma falha. As medidas de reposta são a redundancia, seja de banco de dados ou de servidor.
+A tolerancia diz respeito a como irão responder a alguma falha. As medidas de reposta são a redundancia, 
+seja de banco de dados ou de servidor.
 
 ## Heterogeneidade
 
-A heterogeneidade é a capacidade do sistema de integrar diferentes tecnologias. Permitindo que haja o funcionamento harmônico entre essas diferentes tecnologias. 
+A heterogeneidade é a capacidade do sistema de integrar diferentes tecnologias. Permitindo que haja o 
+funcionamento harmônico entre essas diferentes tecnologias. 
 
 Existem vários tipos de heterogeneidade:
 	- Hardware
@@ -188,10 +198,46 @@ A heterogeneidade pode ser superada com a utilização de algumas ferramentas.
 
 São elas:
 
-	- Protocolos Padronizados: protocolos como TCP/IP, HTTP e HTTPS definem regras comuns para a comunicação entre dispositivos e aplicações.
+	- Protocolos Padronizados: protocolos como TCP/IP, HTTP e HTTPS definem regras comuns para a 
+	comunicação entre dispositivos e aplicações.
 
-	- APIs(Interfaces de Programação de Aplicações): As APIs permitem que sistemas desenvolvidos em tecnologias diferentes troquem informações de forma padronizada.
+	- APIs(Interfaces de Programação de Aplicações): As APIs permitem que sistemas desenvolvidos em 
+	tecnologias diferentes troquem informações de forma padronizada.
 
-	- Middleware: O middleware atua como uma camada intermidiário entre aplicações distribuídas, ocultando diferenças tecnolóficas e facilitando a comunicação entre componentes heterogêneos.
+	- Middleware: O middleware atua como uma camada intermidiário entre aplicações distribuídas, 
+	ocultando diferenças tecnolóficas e facilitando a comunicação entre componentes heterogêneos.
 
-	- Padrões Abertos: A adoção de padões amplamente aceitos pela indústria reduz problemas de compatibilidade e facilita a integração entre platagorma distintas.
+	- Padrões Abertos: A adoção de padões amplamente aceitos pela indústria reduz problemas de 
+	compatibilidade e facilita a integração entre platagorma distintas.
+
+
+## Arquitetura cliente servidor 
+
+Essa arquitetura é uma das formas básicas e mais importantes de arquitetura. A arquitetura 
+cliente-servidor é uma forma de comunicação onde a um cliente que se comunica com um servidor através da 
+rede. Essa arquitetura permitiu que os serviços fossem centralizados, a manutenção se torna-se mais barata
+e a utilização do sistema pelos usuários também. A arquitetura cliente-servidor funciona graças aos 
+conceitos de sistemas distribuídos, pois essa arquitetura simplificada torna transparente todos os 
+balanceadores de carga, replicadores, tolerância a falhas e a disponibilidade.
+
+
+## Arquitetura 3 camadas
+
+A arquitetura 3 camadas tem o objetivo de criar separações lógicas para lidar com o processos de
+desenvolvimento do sistema. Cada camada possui uma função específica dentro do sistema. As camadas 
+são:
+
+	Apresentação: Camada destinada ao usuário, onde o mesmo interage, faz solicitações e 
+				  requisições.
+				  
+	Negócios: A camada de negócios é reponsável pelo tratamento e polimento dos dados que vem do usuário. 
+			  Assim que são devidademente tratados são enviados para a camada de dados.
+			  
+	Dados: A camada responsável pela persistência dos dados no banco de dados.
+	
+A organização em camada promove uma melhor organização, baixo acoplamento para com o sistema. Tornando 
+o sistema mais fácil de manusear e concertar.
+
+
+## Arquitetura N camadas
+
