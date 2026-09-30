@@ -342,8 +342,44 @@ socket -> connect -> send/request -> close
 
 ## TCP/UDP
 
-O protocolo TCP é um protocolo que é orientado a conexão. Ele garante uma entrega ordenada, confiável, com um fluxo de bytes  entre outras características. A garantia desse serviço é dada pelo handshake de 3 vias. Esse handshake é a forma que o TCP estabelece o canal de comunicação para trocar dados.
+O protocolo TCP é um protocolo que é orientado a conexão. Ele garante uma entrega ordenada, confiável, 
+com um fluxo de bytes  entre outras características. A garantia desse serviço é dada pelo handshake de 
+3 vias. Esse handshake é a forma que o TCP estabelece o canal de comunicação para trocar dados.
 
-O protocolo UDP é bem mais simples que o TCP. O UDP não é orientado a conexões, portanto ele não entrega nenhuma garantia que o TCP possui e nem estabelece um canal de comunicação previamente. O protocolo envia os dados de forma unidirecional para o destino.
+O protocolo UDP é bem mais simples que o TCP. O UDP não é orientado a conexões, portanto ele não entrega 
+nenhuma garantia que o TCP possui e nem estabelece um canal de comunicação previamente. O protocolo envia 
+os dados de forma unidirecional para o destino.
 
-A utilização do UDP ou do TCP depende dos requisitos do sistema. Caso a ordem de entrega e a garantia da entrega sejam necessárias o TCP é o mais indicado. Se a entrega mais rápida for a prioridade o UDP é o mais indicado.
+A utilização do UDP ou do TCP depende dos requisitos do sistema. Caso a ordem de entrega e a garantia da 
+entrega sejam necessárias o TCP é o mais indicado. Se a entrega mais rápida for a prioridade o UDP é o 
+mais indicado.
+
+## HTTP 
+
+O HTTP é um protocolo de comunicação da camada de aplicação, ou seja, da web. Esse protocolo é utilizado 
+para enviar dados através da web. É muito utilizado por APIs. Por ser a forma padrão de comunicação na 
+web é utilizado como protocolo de troca de dados entre diferentes sistemas.
+
+O HTTP consiste em uma requisição feita a um servidor que retorna uma resposta. Essa requisição é um 
+cabeçalho com algumas informações básicas como o método HTTP usado e dados necessários para a requisição.
+Os métodos HTTP mais conhecidos são o GET, para pegar informações, POST para adicionar informações, PUT 
+para atualizar ou substituir um conteúdo, PATCH para atualizar parcialmente um conteúdo e DELETE para 
+remover um conteúdo.
+
+O HTTP possui um código de status para informar o que aconteceu com as requisições. 
+Os principais são:
+200 -> Solicitação processada com sucesso.
+201 -> Recurso criado.
+400 -> Requisição inválida.
+401 -> Não autenticado.
+403 -> Acesso proibido.
+404 -> Recurso não encontrado.
+500 -> Erro interno do servidor.
+
+O grande problema do HTTP é que seu trafégo é feito em texto simples, para resolver isso foi adicionado 
+uma camada de segurança chamada de TLS (Transport Layer Security) que criptografa os dados enviados. O 
+HTTP e o HTTPS fazem as mesmas funcionalidades.
+
+Vale resaltar que o HTTP/HTTPS fazem somente a comunicação não garantem como os dados vão ser tratados
+ou disponibilizados.
+
