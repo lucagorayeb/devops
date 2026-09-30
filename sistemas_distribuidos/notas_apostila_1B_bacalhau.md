@@ -302,3 +302,48 @@ Sistemas Monolitos e Cliente-servidor Tradicional devem ter o foco em CP/CA. Sis
 Microsserviços com Bancos de Dados Isolados devem ter foco em AP ou CP por serviço. Como esses dependem de nós de rede deve se decidir se preservará a consistência, CP, ou se será a diponibilidade, AP, depende dos requisitos do sistema.
 
 Arquitetura P2P e Grids devem ter foco em AP. Devido a alta volatilidade dos nós esses sistemas adotam o AP para garantir que o serviço está o máximo tempo dispnível.
+
+## Comunicação entre processos
+
+Os processos são a forma que um computador tem de executar tarefas. Geralmente alguns processos necessitam se comunicar com outros processos e por isso se faz necessário o IP, Inter-Process Communication, que é um conjunto de mecanismos utilizados para permitir a comunicação e a coordenação entre processos.
+
+Essa comunicação pode ocorrer em uma mesma máquina ou em máquinas diferentes, no segundo caso a comunicação também depende da infraestrutura de rede para funcionar corretamente.
+
+Os processos se comunicam através de mensagens. 
+
+processo A -> mensagem -> processo B
+
+ou, quando há resposta.
+
+processo A -> requisição -> processo B -> resposta -> processo A
+
+Essa comunicação por mensagens pode acontecer de forma síncrona ou assíncrona. A comunicação síncrona faz um solicitação e aguarda uma resposta. A comunicação assíncrona faz uma solicitação, mas não fica esperando por uma resposta.
+
+## Socket 
+
+Sockets são um ponto de comunicação (interface) entre uma rede. Para um socket se comunicar com outro se faz necessário alguns parametros como o endereço do outro computador (IP), a porta por onde vai ocorrer a conexão e o protocolo que vai ser utilizado para trocar os dados.
+
+
+O socket TCP é muito utilizado em mecanismos de conexões cliente-servidor. Cada elementotem sua função:
+
+Cliente -> Cria o socket, informa o endereço e a porta para o servidor, solicita a conexão, envia e recebe dados e encerra a conexão.
+
+Servidor -> Cria o socket, associa o socket a um endereço de uma porta, coloca o socket em estado de espera, aguarda uma conexão, aceita a conexão de um cliente e recebe e envia dados. 
+
+O processo pode ser representado como:
+
+Servidor: 
+socket -> bind -> listen -> accept -> comunication
+
+Cliente:
+socket -> connect -> send/request -> close
+
+ O socket UDP é o processo que não é orientado a conexões igual ao TCP, por esse motivo o UDP não garante a entrega ele somente envia o datagrama entre processos. O benefício do UDP é que a comunicação é mais rápida pois não necessita fazer o handshake.
+
+## TCP/UDP
+
+O protocolo TCP é um protocolo que é orientado a conexão. Ele garante uma entrega ordenada, confiável, com um fluxo de bytes  entre outras características. A garantia desse serviço é dada pelo handshake de 3 vias. Esse handshake é a forma que o TCP estabelece o canal de comunicação para trocar dados.
+
+O protocolo UDP é bem mais simples que o TCP. O UDP não é orientado a conexões, portanto ele não entrega nenhuma garantia que o TCP possui e nem estabelece um canal de comunicação previamente. O protocolo envia os dados de forma unidirecional para o destino.
+
+A utilização do UDP ou do TCP depende dos requisitos do sistema. Caso a ordem de entrega e a garantia da entrega sejam necessárias o TCP é o mais indicado. Se a entrega mais rápida for a prioridade o UDP é o mais indicado.
