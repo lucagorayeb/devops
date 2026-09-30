@@ -241,3 +241,64 @@ o sistema mais fácil de manusear e concertar.
 
 ## Arquitetura N camadas
 
+A arquitetura N camadas é uma evolução da arquitetura 3 camadas. A diferença entre as duas é que na arquitetura N camadas o sistemas pode aderir mais camadas se necessário para cuidar de outros aspectos. Assim separando as reponsabilidades de uma forma mais clara.
+
+Se faz necessário quando o sistem possui vários tipos de usuários e necessita integração com outros sistemas.
+
+## P2P
+
+O modelo peer-to-peer é um modelo de sistema distribuido que é totalmente descretralizado. 
+Cada integrante dessa rede (peer/nó/seed) pode atuar como cliente, solicitando recurso, e como servidor, disponibilizando o recurso. 
+
+Isso faz com que cada integrante possa enviar ou pegar contéudo de outro integrante. A medida que mais usuários se conectam a rede melhor ela fica. 
+
+Tem a vantagem de não depender de um servidor central para fazer a distribuição do arquivo, mas tem a disvantagem de segurança e de que uma seed pode entrar e sair a qualquer momento diminuindo a eficiência da rede.
+
+## Cluster
+
+Cluster são um conjunto de máquinas que trabalham de forma organizada e coordenada para atingir ou garantir uma finalidade.
+
+Um cluster é um tipo de sistema distribuído, mas nem todo sistema distríbuido é um cluster.
+
+As funções que um cluster pode realizar são a de alta disponibilidade, balanceamento de carga, escalabilidade e processamento em paralelo.
+
+Cada computador que faz parte de um cluster é chamado de nó.
+
+Os nós trabalham em conjunto para atingir os objetivo desejado.
+
+## Grid Computing 
+
+A computação de grade tem o foco principal no compartilhamento de recursos e de informações ao longo da rede. 
+
+A grid não precisa ter o mesmo domínio administrativo, a mesma finalidade e nem estar no mesmo local. 
+
+A grid computing é exemplificada pela arquitetura P2P.
+
+## Microsserviços
+
+Os microsserviços são uma arquitetura que se baseia no isolamento de cada serviço. 
+
+A comunicação entre esses diferentes serviços deve ser feita por meio de um interface comum, geralmente uma API. 
+
+Os microsserviços promovem interdependencia dos outros serviços, o que facilita a manutenção, o isolamento de falhas, escalabilidade independente e flexibilidade tecnologica.
+
+Essa arquitetura apresenta alguns desafios como a latência de rede pelo trafego dos dados, monitoramento de diferentes serviços, autenticação e autorização, consistência dos dados e rastreamento de requisições. 
+## Teorema CAP ou Teorema de Brewer
+
+O CAP diz respeito ao que o sistema levar em consideração para o que foi projetado para fazer.
+
+C -> Quer dizer consistencia, os dados estão sempre atualizados.
+
+A -> Quer dizer disponibilidade. Os serviço está disponível e responde todas as requisições.
+
+P -> Quer dizer tolerancia a falhas na rede. O sistema funciona se tiver falha entre os nós.
+
+Na teoria só tem como escolher 2 de 3, pois como projetistas devemos sempre adotar que a rede não é confiável, enlaces se rompem entre outros motivos que tornam a rede não confiável.
+
+As combinações de implementação dependem da arquitetura adotada pelo sistema.
+
+Sistemas Monolitos e Cliente-servidor Tradicional devem ter o foco em CP/CA. Sistemas que não possuem distribuição de dados em diferentes nós não precisa se preocucar com a rede somente se infraestrutura única estiver no ar.
+
+Microsserviços com Bancos de Dados Isolados devem ter foco em AP ou CP por serviço. Como esses dependem de nós de rede deve se decidir se preservará a consistência, CP, ou se será a diponibilidade, AP, depende dos requisitos do sistema.
+
+Arquitetura P2P e Grids devem ter foco em AP. Devido a alta volatilidade dos nós esses sistemas adotam o AP para garantir que o serviço está o máximo tempo dispnível.
