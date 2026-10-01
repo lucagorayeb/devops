@@ -376,10 +376,39 @@ Os principais são:
 404 -> Recurso não encontrado.
 500 -> Erro interno do servidor.
 
-O grande problema do HTTP é que seu trafégo é feito em texto simples, para resolver isso foi adicionado 
-uma camada de segurança chamada de TLS (Transport Layer Security) que criptografa os dados enviados. O 
+O grande problema do HTTP é que seu trafégo é feito em texto simples, para resolver 
+isso foi adicionado 
+uma camada de segurança chamada de TLS (Transport Layer Security) que criptografa os 
+dados enviados. O 
 HTTP e o HTTPS fazem as mesmas funcionalidades.
 
-Vale resaltar que o HTTP/HTTPS fazem somente a comunicação não garantem como os dados vão ser tratados
+Vale resaltar que o HTTP/HTTPS fazem somente a comunicação não garantem como os 
+dados vão ser tratados
 ou disponibilizados.
 
+## Middleware
+
+O middleware é a camada que abstrai toda a lógica de de funcionamento de um sistema 
+e cria uma formato simples e transparente de RPC/RMI.
+
+O middleware faz com que o cliente possa se comunicar com diferentes servidores, 
+independente da tecnologia que eles utilizam. Ele abstrai as requisições HTTP/HTTPS,
+o tipo de comunicação se vai ser TCP ou UDP e abstrai a implementação da interface 
+de rede, socket.
+
+## RPC 
+
+O RPC ou Remote Procedure Call é um forma de chamada de remota que é transparente ao 
+usuário, graças ao middlewares. Embora o RPC se assemelhe a uma chamada local, ele é 
+uma chamada remota e por isso tem todos os problemar relacionados a comunicação em 
+rede como a falha de rede entre outros.
+
+Os stubs ou proxys são as ferramentas que preparam a chamada da aplicação, existem 
+em ambos os programas cliente e servidor. O cliente faz a chamada e o stub do 
+cliente envia a mensagem para o servidor. O stub do servidor recebe a mensagem e 
+chama a função. Quando o servidor retorna a resposta, o stub do servidor envia a 
+mensagem para o stub do cliente que retorna a resposta para o cliente.
+
+A serialização é o transporte das chamadas das chamadas remotas pela rede.
+O processo de serialização é a conversão da chamada do cliente para uma forma
+adequada de transmissão e no servidor o processo é invertido.
